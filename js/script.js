@@ -19,5 +19,15 @@ function addBookToLibrary(title,author,page,read) {
     myLibrary.push(livre)
     return myLibrary
 }
-console.log(addBookToLibrary("hivernage","jule verne",350,true));
-console.log(addBookToLibrary("les miserable","victor Hugo",420,false));
+addBookToLibrary("hivernage","jule verne",350,true);
+addBookToLibrary("les miserable","victor Hugo",420,false);
+function affichage(){
+    const etagere=document.querySelector("#identifiant");
+    for(let i=0;i < myLibrary.length;i++){
+        const p=document.createElement("p");
+        p.textContent=myLibrary[i].title;
+        etagere.appendChild(p);
+    }
+}
+affichage();
+
