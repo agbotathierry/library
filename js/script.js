@@ -24,9 +24,20 @@ addBookToLibrary("les miserable","victor Hugo",420,false);
 function affichage(){
     const etagere=document.querySelector("#identifiant");
     for(let i=0;i < myLibrary.length;i++){
-        const p=document.createElement("p");
-        p.textContent=myLibrary[i].title;
-        etagere.appendChild(p);
+        const carte=document.createElement("div");
+        const p1=document.createElement("p")
+        p1.textContent=myLibrary[i].title;
+        carte.appendChild(p1)
+        const p2=document.createElement("p")
+        p2.textContent=myLibrary[i].author;
+        carte.appendChild(p2)
+        const p3=document.createElement("p")
+        p3.textContent=myLibrary[i].page;
+        carte.appendChild(p3)
+        const p4=document.createElement("p")
+        p4.textContent=myLibrary[i].read;
+        carte.appendChild(p4)
+        etagere.appendChild(carte);
     }
 }
 affichage();
