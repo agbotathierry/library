@@ -21,8 +21,29 @@ function addBookToLibrary(title,author,page,read) {
 }
 addBookToLibrary("hivernage","jule verne",350,true);
 addBookToLibrary("les miserable","victor Hugo",420,false);
+const etagere=document.querySelector("#identifiant");
+const apparition=document.querySelector("#apparition");
+const newbook=document.querySelector("#bouton")
+const formulaire=document.querySelector("#formulaire")
+newbook.addEventListener("click",function(){
+    apparition.showModal()
+});
+formulaire.addEventListener("submit",function(event){
+    event.preventDefault()
+    const caseTitre=document.querySelector("#titre")
+    const caseAuthor=document.querySelector("#auteur")
+    const casePage=document.querySelector("#page")
+    const caseEtat=document.querySelector("#etat")
+    addBookToLibrary(caseTitre.value,caseAuthor.value,casePage.value,caseEtat.checked)
+    console.log(myLibrary)
+    // console.log(caseTitre.value)
+    // console.log(caseAuthor.value)
+    // console.log(casePage.value)
+    // console.log(caseEtat.checked)
+})
+    
+
 function affichage(){
-    const etagere=document.querySelector("#identifiant");
     for(let i=0;i < myLibrary.length;i++){
         const carte=document.createElement("div");
         const p1=document.createElement("p")
